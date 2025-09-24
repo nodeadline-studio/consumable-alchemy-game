@@ -12,13 +12,15 @@ interface GlobalSearchProps {
   onNavigateToLab?: () => void;
   placeholder?: string;
   showAddButton?: boolean;
+  autoNavigate?: boolean; // New prop to control auto-navigation
 }
 
 export default function GlobalSearch({ 
   onSearchResult, 
   onNavigateToLab,
   placeholder = "Search consumables...",
-  showAddButton = true 
+  showAddButton = true,
+  autoNavigate = true // Default to true for backward compatibility
 }: GlobalSearchProps) {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<Consumable[]>([]);
@@ -66,8 +68,8 @@ export default function GlobalSearch({
       onSearchResult(consumable);
     }
     
-    // If we have navigation callback, call it
-    if (onNavigateToLab) {
+    // Only navigate if autoNavigate is enabled
+    if (onNavigateToLab && autoNavigate) {
       onNavigateToLab();
     }
   };

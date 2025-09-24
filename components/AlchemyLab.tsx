@@ -53,6 +53,7 @@ const AlchemyLab = memo(function AlchemyLab() {
     setSelectedConsumables(newSelected);
     toast.success(`Added ${consumable.name} to the mix`);
     console.log('addToMix completed successfully');
+    console.log('🔴 AlchemyLab: addToMix completed, checking for navigation issues...');
   };
 
   const removeFromMix = (consumableId: string) => {
@@ -158,7 +159,7 @@ const AlchemyLab = memo(function AlchemyLab() {
 
       {/* Global Search in Lab */}
       <div className="mb-8">
-        <GlobalSearch onNavigateToLab={() => {}} />
+        <GlobalSearch onNavigateToLab={() => {}} autoNavigate={false} />
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -212,11 +213,18 @@ const AlchemyLab = memo(function AlchemyLab() {
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
                         onClick={(e) => {
+                          console.log('🔴 BUTTON CLICKED - addToMix button clicked for:', consumable.name);
+                          console.log('🔴 Event target:', e.target);
+                          console.log('🔴 Event currentTarget:', e.currentTarget);
                           e.stopPropagation();
+                          e.preventDefault();
+                          console.log('🔴 About to call addToMix function');
                           addToMix(consumable);
+                          console.log('🔴 addToMix function called successfully');
                         }}
                         disabled={selectedConsumables.find(c => c.id === consumable.id) !== undefined}
                         className="p-1 text-blue-400 hover:text-blue-300 disabled:text-white/30 disabled:cursor-not-allowed transition-colors duration-300"
+                        data-testid="add-to-mix-button"
                       >
                         <Plus className="w-4 h-4" />
                       </motion.button>
