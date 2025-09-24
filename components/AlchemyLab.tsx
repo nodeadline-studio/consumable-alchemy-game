@@ -36,6 +36,7 @@ const AlchemyLab = memo(function AlchemyLab() {
   const addToMix = (consumable: Consumable) => {
     console.log('addToMix called for:', consumable.name);
     console.log('Current selectedConsumables:', selectedConsumables.length);
+    console.log('AlchemyLab: About to add to mix, current view should be lab');
     
     if (selectedConsumables.length >= 5) {
       toast.error('Maximum 5 consumables can be mixed at once');
@@ -51,6 +52,7 @@ const AlchemyLab = memo(function AlchemyLab() {
     console.log('Setting selectedConsumables to:', newSelected.length, 'items');
     setSelectedConsumables(newSelected);
     toast.success(`Added ${consumable.name} to the mix`);
+    console.log('addToMix completed successfully');
   };
 
   const removeFromMix = (consumableId: string) => {
@@ -209,7 +211,10 @@ const AlchemyLab = memo(function AlchemyLab() {
                       <motion.button
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
-                        onClick={() => addToMix(consumable)}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          addToMix(consumable);
+                        }}
                         disabled={selectedConsumables.find(c => c.id === consumable.id) !== undefined}
                         className="p-1 text-blue-400 hover:text-blue-300 disabled:text-white/30 disabled:cursor-not-allowed transition-colors duration-300"
                       >
