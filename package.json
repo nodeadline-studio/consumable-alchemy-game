@@ -30,7 +30,7 @@
     "precommit": "npm run check"
   },
   "dependencies": {
-    "@hookform/resolvers": "^3.3.0",
+    "@hookform/resolvers": "^5.2.2",
     "@types/crypto-js": "^4.2.2",
     "@types/node": "^20.0.0",
     "@types/react": "^18.2.0",
