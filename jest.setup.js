@@ -96,6 +96,13 @@ jest.mock('framer-motion', () => ({
 
 // Mock react-hot-toast
 jest.mock('react-hot-toast', () => ({
+  default: {
+    success: jest.fn(),
+    error: jest.fn(),
+    loading: jest.fn(),
+    dismiss: jest.fn(),
+    promise: jest.fn(),
+  },
   toast: {
     success: jest.fn(),
     error: jest.fn(),
@@ -114,6 +121,16 @@ const localStorageMock = {
   clear: jest.fn(),
 }
 global.localStorage = localStorageMock
+
+// Mock fetch API
+global.fetch = jest.fn(() =>
+  Promise.resolve({
+    ok: true,
+    status: 200,
+    json: () => Promise.resolve({}),
+    text: () => Promise.resolve(''),
+  })
+)
 
 // Mock window.matchMedia
 Object.defineProperty(window, 'matchMedia', {

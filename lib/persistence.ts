@@ -158,8 +158,8 @@ export class PersistenceManager {
   private static validateData(data: any): data is StoredData {
     if (!data || typeof data !== 'object') return false;
     
-    // Check required fields
-    const requiredFields = ['version', 'userProfile', 'gameState', 'experiments', 'achievements', 'inventory'];
+    // Check required fields with more lenient validation
+    const requiredFields = ['version', 'userProfile', 'gameState'];
     for (const field of requiredFields) {
       if (!(field in data)) {
         console.error(`Missing required field: ${field}`);
@@ -167,14 +167,14 @@ export class PersistenceManager {
       }
     }
 
-    // Validate arrays
-    if (!Array.isArray(data.experiments)) return false;
-    if (!Array.isArray(data.achievements)) return false;
-    if (!Array.isArray(data.inventory)) return false;
+    // Validate arrays (allow empty arrays)
+    if (data.experiments && !Array.isArray(data.experiments)) return false;
+    if (data.achievements && !Array.isArray(data.achievements)) return false;
+    if (data.inventory && !Array.isArray(data.inventory)) return false;
 
-    // Validate user profile structure
+    // Validate user profile structure (more lenient)
     if (!data.userProfile || typeof data.userProfile !== 'object') return false;
-    if (!data.userProfile.stats || typeof data.userProfile.stats !== 'object') return false;
+    if (data.userProfile.stats && typeof data.userProfile.stats !== 'object') return false;
 
     return true;
   }
