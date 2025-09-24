@@ -1,0 +1,20 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="particleGlow">
+          <feGaussianBlur stdDeviation="1" result="coloredBlur"/>
+          <feMerge> 
+            <feMergeNode in="coloredBlur"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
+      </defs>
+      <circle cx="64" cy="64" r="1" fill="#3B82F6" opacity="0.6" filter="url(#particleGlow)"/>
+      <circle cx="192" cy="128" r="1.5" fill="#8B5CF6" opacity="0.5" filter="url(#particleGlow)"/>
+      <circle cx="320" cy="96" r="1" fill="#3B82F6" opacity="0.4" filter="url(#particleGlow)"/>
+      <circle cx="448" cy="160" r="1.5" fill="#8B5CF6" opacity="0.6" filter="url(#particleGlow)"/>
+      <circle cx="128" cy="256" r="1" fill="#3B82F6" opacity="0.3" filter="url(#particleGlow)"/>
+      <circle cx="256" cy="320" r="1.5" fill="#8B5CF6" opacity="0.5" filter="url(#particleGlow)"/>
+      <circle cx="384" cy="384" r="1" fill="#3B82F6" opacity="0.4" filter="url(#particleGlow)"/>
+      <circle cx="96" cy="416" r="1.5" fill="#8B5CF6" opacity="0.6" filter="url(#particleGlow)"/>
+      <circle cx="320" cy="448" r="1" fill="#3B82F6" opacity="0.3" filter="url(#particleGlow)"/>
+    </svg>

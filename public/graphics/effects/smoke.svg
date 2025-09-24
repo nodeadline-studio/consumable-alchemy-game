@@ -1,0 +1,15 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="smokeBlur">
+          <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+          <feMerge> 
+            <feMergeNode in="coloredBlur"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
+      </defs>
+      <circle cx="32" cy="48" r="8" fill="#E5E7EB" opacity="0.6" filter="url(#smokeBlur)"/>
+      <circle cx="28" cy="40" r="6" fill="#E5E7EB" opacity="0.4" filter="url(#smokeBlur)"/>
+      <circle cx="36" cy="36" r="4" fill="#E5E7EB" opacity="0.3" filter="url(#smokeBlur)"/>
+      <circle cx="32" cy="32" r="3" fill="#E5E7EB" opacity="0.2" filter="url(#smokeBlur)"/>
+    </svg>

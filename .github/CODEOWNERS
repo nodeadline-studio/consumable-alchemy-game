@@ -1,0 +1,13 @@
+# Global code owners
+* @tommykuznets
+
+# Core game logic
+/lib/ @tommykuznets
+/contexts/ @tommykuznets
+/components/ @tommykuznets
+
+# Tests
+/__tests__/ @tommykuznets
+
+# Documentation
+*.md @tommykuznets

@@ -1,0 +1,17 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="warningGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#EF4444;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#DC2626;stop-opacity:1" />
+        </linearGradient>
+        <filter id="warningGlow">
+          <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+          <feMerge> 
+            <feMergeNode in="coloredBlur"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
+      </defs>
+      <path d="M32 8 L56 48 L8 48 Z" fill="url(#warningGradient)" filter="url(#warningGlow)"/>
+      <path d="M32 20 L32 36 M32 40 L32 44" stroke="white" stroke-width="3" stroke-linecap="round"/>
+    </svg>

@@ -1,0 +1,14 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="steamBlur">
+          <feGaussianBlur stdDeviation="1" result="coloredBlur"/>
+          <feMerge> 
+            <feMergeNode in="coloredBlur"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
+      </defs>
+      <circle cx="16" cy="24" r="4" fill="#E5E7EB" opacity="0.6" filter="url(#steamBlur)"/>
+      <circle cx="14" cy="20" r="3" fill="#E5E7EB" opacity="0.4" filter="url(#steamBlur)"/>
+      <circle cx="18" cy="18" r="2" fill="#E5E7EB" opacity="0.3" filter="url(#steamBlur)"/>
+    </svg>

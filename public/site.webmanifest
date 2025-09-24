@@ -1,0 +1,84 @@
+{
+  "name": "Consumable Alchemy Game",
+  "short_name": "Alchemy Game",
+  "description": "Safe Consumable Interaction Checker - Discover the magical world of consumable safety!",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#1e293b",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en",
+  "categories": ["health", "lifestyle", "education", "games"],
+  "icons": [
+    {
+      "src": "/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshot-mobile.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "/screenshot-desktop.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "New Experiment",
+      "short_name": "Experiment",
+      "description": "Start a new consumable safety experiment",
+      "url": "/?view=lab",
+      "icons": [
+        {
+          "src": "/shortcut-experiment.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Search Consumables",
+      "short_name": "Search",
+      "description": "Search for consumables to analyze",
+      "url": "/?view=search",
+      "icons": [
+        {
+          "src": "/shortcut-search.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false
+}

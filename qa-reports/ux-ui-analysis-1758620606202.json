@@ -1,0 +1,50 @@
+{
+  "claims": {
+    "searchFunctionality": "Search for consumables by name or barcode",
+    "safetyAnalysis": "Real-time safety scoring and warnings",
+    "gamification": "XP, levels, achievements, and progression",
+    "medicalDatabase": "Comprehensive substance interaction checking",
+    "responsiveDesign": "Works on all devices",
+    "performance": "Fast loading and smooth interactions",
+    "security": "Robust input sanitization and validation",
+    "pwa": "Progressive Web App capabilities",
+    "seo": "Search engine optimization",
+    "accessibility": "WCAG compliance"
+  },
+  "actual": {
+    "pageLoadTime": 1584,
+    "gamification": "Missing",
+    "headings": 1,
+    "imagesWithAlt": "0/0 images have alt text",
+    "ariaElements": 0,
+    "manifest": "Present",
+    "serviceWorker": "Supported",
+    "appIcons": "Present",
+    "securityHeaders": "3/3 present",
+    "performance": {
+      "domContentLoaded": 0.10000002384185791,
+      "loadComplete": 0,
+      "totalTime": null,
+      "firstPaint": 0,
+      "firstContentfulPaint": 0
+    }
+  },
+  "issues": [
+    {
+      "type": "search_test",
+      "message": "this.page.waitForTimeout is not a function",
+      "severity": "high"
+    },
+    {
+      "type": "gamification",
+      "message": "No gamification elements (XP, levels, achievements) found",
+      "severity": "medium"
+    },
+    {
+      "type": "responsive_test",
+      "message": "this.page.waitForTimeout is not a function",
+      "severity": "medium"
+    }
+  ],
+  "recommendations": []
+}
