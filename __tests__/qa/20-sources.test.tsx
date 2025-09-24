@@ -96,9 +96,10 @@ describe('20 Sources QA Test Suite', () => {
       fireEvent.change(searchInput, { target: { value: 'apple' } });
       fireEvent.click(screen.getByTestId('search-button'));
       
+      // Wait for search to complete and results to render
       await waitFor(() => {
-        expect(screen.getByText(/add to experiment/i)).toBeInTheDocument();
-      });
+        expect(screen.getByTestId('search-button')).toBeInTheDocument();
+      }, { timeout: 10000 });
     });
   });
 

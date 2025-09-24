@@ -331,11 +331,14 @@ function SearchInterface() {
               }}
               placeholder="Search by name, barcode, or category..."
               className="input-field w-full pl-12 pr-32"
+              aria-label="Search for consumables"
+              aria-describedby="search-description"
             />
             <div className="absolute right-2 top-1/2 transform -translate-y-1/2 flex space-x-2">
               <button
                 onClick={() => {/* TODO: Implement barcode scanning */}}
                 className="p-2 text-white/60 hover:text-white hover:bg-white/10 rounded-lg transition-colors duration-200"
+                aria-label="Scan barcode"
               >
                 <Camera className="w-5 h-5" />
               </button>
@@ -353,6 +356,7 @@ function SearchInterface() {
                 disabled={isLoading}
                 className="button-primary px-6 py-2 disabled:opacity-50 disabled:cursor-not-allowed"
                 data-testid="search-button"
+                aria-label="Search for consumables"
               >
                 {isLoading ? 'Searching...' : 'Search'}
               </button>

@@ -222,6 +222,26 @@ export default function ConsumableCard({
         </motion.div>
       )}
 
+      {/* Add Button */}
+      {onAdd && (
+        <motion.button
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          onClick={(e) => {
+            e.stopPropagation();
+            console.log('Add button clicked for:', consumable.name);
+            onAdd();
+          }}
+          className="absolute top-2 right-2 w-8 h-8 bg-blue-500 hover:bg-blue-600 rounded-full flex items-center justify-center text-white shadow-lg transition-colors duration-200 z-10"
+          data-testid="add-to-inventory-button"
+          aria-label={`Add ${consumable.name} to inventory`}
+        >
+          <Plus className="w-4 h-4" />
+        </motion.button>
+      )}
+
       {/* Hover Glow Effect */}
       {isHovered && interactive && (
         <motion.div
